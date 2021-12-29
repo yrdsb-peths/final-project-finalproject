@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StartPage here.
+ * Title page of the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Valerie Sum 
+ * @version Dec. 28/21
  */
 public class StartPage extends World
 {
-    Text start = new Text(" Press to Start ", 50, 255, 255, 255, 70, 70, 70); 
+    Text start = new Text(" Press to start ", 50, 255, 255, 255, 70, 70, 70); 
     
     /**
      * Constructor for objects of class StartPage.
@@ -25,7 +25,7 @@ public class StartPage extends World
     {
         if(Greenfoot.mouseClicked(start))
         {
-            System.out.println("hi");
+            Greenfoot.setWorld(new Introduction());
         }
     }
 }

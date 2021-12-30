@@ -30,7 +30,7 @@ public class Introduction extends World
         addObject(phonecall, 400, 270);
         addObject(cont, 630, 555);
     }
-    
+ 
     public void act()
     {
         if(Greenfoot.mouseClicked(cont))

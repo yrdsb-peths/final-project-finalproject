@@ -19,5 +19,12 @@ public class Text extends Actor
         Color textColor = new Color(r, g, b);
         Color background = new Color(br, bg, bb);
         setImage(new GreenfootImage(content, size, textColor, background));
-    }   
+    }
+    
+    //Creates white text with grey background
+    public Text(String content, int size) 
+    {
+        Color background = new Color(40, 40, 40);
+        setImage(new GreenfootImage(content, size, Color.WHITE, background));
+    }  
 }

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Jumpscare
+comment0.text=\r\n\ A\ jumpscare\ if\ a\ user\ fails\ to\ impress\ Mary.\r\n\ \r\n\ @author\ Valerie\ Sum\r\n\ @version\ Dec.\ 29/21\r\n
+comment1.params=
+comment1.target=Jumpscare()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Jumpscare.\r\n\ \r\n
+numComments=2

@@ -15,7 +15,7 @@ public class Introduction extends World
                       "on you since you won't answer her at all. \n\n" +
                       "Look man, I'm saying this as your friend - there's \n" + 
                       "plenty of fish in the sea. I know one of my friends is \n" +
-                      "up for a blind date, or like go on Tinder or something! \n\n" +
+                      "up for a blind date, or like try something spontaneous! \n\n" +
                       "I'll talk to you soon, bye.";
     Text phonecall = new Text(dialogue, 30, 255, 255, 255, 0, 0, 0);
     Text cont = new Text(" Press to continue ", 40, 255, 255, 255, 70, 70, 70);  
@@ -27,7 +27,7 @@ public class Introduction extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
-        addObject(phonecall, 400, 300);
+        addObject(phonecall, 400, 270);
         addObject(cont, 630, 555);
     }
     

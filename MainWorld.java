@@ -10,8 +10,10 @@ public class MainWorld extends World
 {
     int romanceScore = 0;
     // Should questions be in a list? (Text[])
-    Text ritual = new Text(" I have been lonely for a while. ", 38, 255, 255, 255, 0, 0, 0);
-    Text ritualAns1 = new Text(" Summon Bloody Mary ", 33);   
+    Text ritual = new Text(" I have been lonely for a while. ", 38, 255, 255, 255, 229, 115, 115);
+    //Text ritualAns1 = new Text(" Summon Bloody Mary ", 33);
+    
+    PlayerTextBox playerBox = new PlayerTextBox();
     
     /**
      * Constructor for objects of class MainWorld.
@@ -31,7 +33,8 @@ public class MainWorld extends World
     public void beginRitual()
     {
         setBackground("mirror.png");
-        addObject(ritual, 400, 450);
-        addObject(ritualAns1, 400, 500);
+        addObject(playerBox, 400, 500);
+        addObject(ritual, 400, 520);
+        //addObject(ritualAns1, 400, 500);
     }
 }

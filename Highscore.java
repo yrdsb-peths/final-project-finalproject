@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Highscore extends World
 {
-
+    // Use Quicksort
     /**
      * Constructor for objects of class Highscore.
      * 

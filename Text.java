@@ -21,10 +21,10 @@ public class Text extends Actor
         setImage(new GreenfootImage(content, size, textColor, background));
     }
     
-    //Creates white text with grey background
+    //Creates white text with pink background
     public Text(String content, int size) 
     {
-        Color background = new Color(40, 40, 40);
+        Color background = new Color(229, 115, 115);
         setImage(new GreenfootImage(content, size, Color.WHITE, background));
     }  
 }

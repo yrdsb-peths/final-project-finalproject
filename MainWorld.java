@@ -10,7 +10,7 @@ public class MainWorld extends World
 {
     int romanceScore = 0;
     // Should questions be in a list? (Text[])
-    Text ritual = new Text(" I have been lonely for a while. ", 38, 255, 255, 255, 229, 115, 115);
+    Text ritual = new Text(" I have been lonely for a while. ", 38);
     //Text ritualAns1 = new Text(" Summon Bloody Mary ", 33);
     
     PlayerTextBox playerBox = new PlayerTextBox();

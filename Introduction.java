@@ -13,7 +13,7 @@ public class Introduction extends World
                       "Yeah... I know you got dumped. \n" +
                       "Your sister has been asking me to check up \n" + 
                       "on you since you won't answer her at all. \n\n" +
-                      "Look man, I'm saying this as your friend - there's \n" + 
+                      "Look, I'm saying this as your friend - there's \n" + 
                       "plenty of fish in the sea. I know one of my friends is \n" +
                       "up for a blind date, or like try something spontaneous! \n\n" +
                       "Call me back when you can, bye.";

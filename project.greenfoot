@@ -1,4 +1,5 @@
 #Greenfoot project file
+class.Highscore.image=highscores.png
 class.Introduction.image=black\ background.png
 class.MaryTextBox.image=mary\ text\ box.png
 class.PlayerTextBox.image=player\ text\ box.png
@@ -21,9 +22,9 @@ dependency5.type=UsesDependency
 dependency6.from=Introduction
 dependency6.to=MainWorld
 dependency6.type=UsesDependency
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=262
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
 editor.fx.0.y=0
 height=744
 package.numDependencies=6

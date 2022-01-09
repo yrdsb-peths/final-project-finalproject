@@ -6,11 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TextChoice extends Actor
+public class TextChoice 
 {
     private String theText;
     private boolean choice;
-    public TextChoice(String text, boolean positive){
+    public TextChoice(String text, boolean positive, response){
         theText = text;
         choice = positive;
     }

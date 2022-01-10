@@ -68,7 +68,5 @@ public class Button extends Actor
                 setImage(new GreenfootImage(content, size, Color.WHITE, hoverbg));
             }
         }
-        
-        //setImage(new GreenfootImage(content, size, Color.WHITE, bg));
     }
 }

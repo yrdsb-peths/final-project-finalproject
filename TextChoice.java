@@ -9,8 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TextChoice 
 {
     private String theText;
+    private String theResponse;
+    private String theResponse1;
     private boolean choice;
-    public TextChoice(String text, boolean positive, response){
+    public TextChoice(String text, String response, boolean positive){
         theText = text;
         choice = positive;
     }
@@ -19,5 +21,8 @@ public class TextChoice
     }
     public boolean getChoice(){
         return choice;
+    }
+    public String getResponse1(){
+        return theResponse;
     }
 }

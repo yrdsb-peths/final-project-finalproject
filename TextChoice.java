@@ -10,7 +10,7 @@ public class TextChoice
 {
     private String theText;
     private boolean choice;
-    public TextChoice(String text, boolean positive, response){
+    public TextChoice(String text, boolean positive, String response){
         theText = text;
         choice = positive;
     }

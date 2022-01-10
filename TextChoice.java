@@ -8,13 +8,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TextChoice 
 {
-    private String theText;
-    private String theResponse;
-    private String theResponse1;
+    private String maryQpos;
+    private String maryQneg;
+    private String res1;
+    private String res2;
+    private String res3;
+    private String maryR1pos;
+    private String maryR1neg;
+    private String maryR2pos;
+    private String maryR2neg;
+    private String maryR3pos;
+    private String maryR3neg;
     private boolean choice;
     public TextChoice(String text, String response, boolean positive){
         theText = text;
         choice = positive;
+        
+    }
+    private void points (String type){
+        
     }
     public String getText(){
         return theText;

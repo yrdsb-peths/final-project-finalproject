@@ -9,11 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MainWorld extends World
 {
     int romanceScore = 0;
-    // Should questions be in a list? (Text[])
-    Text ritual = new Text(" I have been lonely for a while. ", 38);
-    //Text ritualAns1 = new Text(" Summon Bloody Mary ", 33);
-    
     PlayerTextBox playerBox = new PlayerTextBox();
+    
+    // Player summons Mary.
+    Text ritual1 = new Text(" Well… this is getting depressing. Who thought summoning a \n" +
+                            "spirit was the last resort to curing loneliness. Whatever. Let \n" +
+                            "me go turn off the light. ",
+                            25);
+
+    Text ritual2 = new Text(" Ok, here I go. Bloody Mary, bloody Mary, \n" +
+                            "bloody Mary… ", 30);
     
     /**
      * Constructor for objects of class MainWorld.
@@ -34,7 +39,16 @@ public class MainWorld extends World
     {
         setBackground("mirror.png");
         addObject(playerBox, 400, 500);
-        addObject(ritual, 400, 520);
-        //addObject(ritualAns1, 400, 500);
+        addObject(ritual1, 400, 520);
+        if(Greenfoot.isKeyDown("right"))
+        {
+            removeObject(ritual1);
+            addObject(ritual2, 400, 520);
+            setBackground("black background.png");
+        }
+    }
+    
+    public void prompt1()
+    {
     }
 }

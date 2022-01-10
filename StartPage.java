@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartPage extends World
 {
-    Text start = new Text(" Press to start ", 50, 255, 255, 255, 70, 70, 70); 
+    Button start = new Button(" Press to start ", 50, 70, 70, 70); 
     
     /**
      * Constructor for objects of class StartPage.

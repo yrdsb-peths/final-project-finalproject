@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainWorld extends World
 {
-    int romanceScore = 0;
+    Integer romanceScore = 0;
     PlayerTextBox playerBox = new PlayerTextBox();
     
     // Player summons Mary.

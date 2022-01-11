@@ -12,9 +12,9 @@ public class MainWorld extends World
     PlayerTextBox playerBox = new PlayerTextBox();
     
     // Player summons Mary.
-    Text ritual1 = new Text(" Well… this is getting depressing. Who thought summoning a \n" +
-                            "spirit was the last resort to curing loneliness. Whatever. Let \n" +
-                            "me go turn off the light. ",
+    Text ritual1 = new Text(" Well… this is getting depressing. Who thought \n" +
+                            "summoning a spirit was the last resort to curing \n" +
+                            "loneliness. Whatever. Let me go turn off the light. ",
                             25);
 
     Text ritual2 = new Text(" Ok, here I go. Bloody Mary, bloody Mary, \n" +
@@ -45,6 +45,7 @@ public class MainWorld extends World
             removeObject(ritual1);
             addObject(ritual2, 400, 520);
             setBackground("black background.png");
+            //Greenfoot.delay(300);
         }
     }
     

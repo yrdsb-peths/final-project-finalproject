@@ -14,6 +14,7 @@ public class TextChoice
     private boolean choice;
     public TextChoice(String mary1pos, String mary1neg, String res1, String res2, String res3, String mRes1pos, String mRes1neg, String mRes2pos, String mRes2neg, String mRes3pos, String mRes3neg, boolean positive){
         String[] posOption = new String[2];
+        posOption[0] = res1 
         String[] nulOption = new String[2];
         String[] negOption = new String[2];
         if (positive){

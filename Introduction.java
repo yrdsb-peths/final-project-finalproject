@@ -10,15 +10,15 @@ public class Introduction extends World
 {
     String dialogue = "Um, hey. How are you? It's been a while since \n" +
                       "I've seen you out... \n\n" +
-                      "Yeah... Yeah I know... you got  \n" +
-                      "dumped. Your sister has been asking me to check up \n" + 
+                      "Yeah... I know you got dumped. \n" +
+                      "Your sister has been asking me to check up \n" + 
                       "on you since you won't answer her at all. \n\n" +
-                      "Look man, I'm saying this as your friend - there's \n" + 
+                      "Look, I'm saying this as your friend - there's \n" + 
                       "plenty of fish in the sea. I know one of my friends is \n" +
                       "up for a blind date, or like try something spontaneous! \n\n" +
-                      "I'll talk to you soon, bye.";
+                      "Call me back when you can, bye.";
     Text phonecall = new Text(dialogue, 30, 255, 255, 255, 0, 0, 0);
-    Text cont = new Text(" Press to continue ", 40, 255, 255, 255, 70, 70, 70);  
+    Button cont = new Button(" Press to continue ", 40, 70, 70, 70);  
     /**
      * Constructor for objects of class Introduction.
      * 

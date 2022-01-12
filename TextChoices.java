@@ -22,7 +22,6 @@ public class TextChoices extends Actor
         String responsePath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Responses.txt";;
         String reactionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Reactions.txt";;
         
-        
         ArrayList<String> questions = new ArrayList<String>(); //question 0 associated with response 0
         ArrayList<String> responses = new ArrayList<String>();
         ArrayList<String> reactions = new ArrayList<String>();

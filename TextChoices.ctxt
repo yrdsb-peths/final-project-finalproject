@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=TextChoices
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TextChoices\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TextChoices\ here.\r\n\ \r\n\ @author\ David\ Gao\r\n\ @version\ Jan.\ 12/22\r\n
 comment1.params=
 comment1.target=TextChoices()
 comment2.params=temp\ path

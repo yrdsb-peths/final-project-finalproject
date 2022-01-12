@@ -10,8 +10,8 @@ import java.util.Scanner;  // (World, Actor, GreenfootImage, Greenfoot and Mouse
 /**
  * Write a description of class TextChoices here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author David Gao
+ * @version Jan. 12/22
  */
 public class TextChoices extends Actor
 {
@@ -30,8 +30,6 @@ public class TextChoices extends Actor
         readPath(questions, questionPath);
         readPath(responses, responsePath);
         readPath(reactions, reactionPath);
-        
-        
     }
     private void readPath(ArrayList<String> temp, String path) throws FileNotFoundException{
         InputStream is = new FileInputStream(path);

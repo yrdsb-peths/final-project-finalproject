@@ -27,4 +27,11 @@ public class Text extends Actor
         Color background = new Color(229, 115, 115);
         setImage(new GreenfootImage(content, size, Color.WHITE, background));
     }  
+    
+    //Creates white text with different background transparency.
+    public Text(String content, int size, int a) 
+    {
+        Color background = new Color(229, 115, 115, a);
+        setImage(new GreenfootImage(content, size, Color.WHITE, background));
+    }  
 }

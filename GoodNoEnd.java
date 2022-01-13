@@ -16,7 +16,7 @@ public class GoodNoEnd extends World
                       "have met the one, but I'm glad I've. \n" +
                       "found someone who'll always be there for me. \n";
     
-    Text endText = new Text(dialogue, 30, 255, 255, 255, 0, 0, 0);
+    Text endText = new Text(dialogue, 30, 0);
     
     /**
      * Constructor for objects of class GoodNoEnd.

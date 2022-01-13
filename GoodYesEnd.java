@@ -16,7 +16,7 @@ public class GoodYesEnd extends World
                       "As long as we're both here for each other, I \n" + 
                       "think we'll be just fine.";
     
-    Text endText = new Text(dialogue, 30, 255, 255, 255, 0, 0, 0);
+    Text endText = new Text(dialogue, 30, 0);
     /**
      * Constructor for objects of class GoodYesEnd.
      * 

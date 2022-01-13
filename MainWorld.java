@@ -1,4 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
+import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 /**
  * Main portion of the game.
@@ -12,6 +19,10 @@ public class MainWorld extends World
     String name;
     PlayerTextBox playerBox = new PlayerTextBox();
     MaryTextBox maryBox = new MaryTextBox();
+    
+    ArrayList<String> questions = new ArrayList<String>(); //question 0 associated with response 0
+    ArrayList<String> responses = new ArrayList<String>();
+    ArrayList<String> reactions = new ArrayList<String>();
     
     // Text for when player summons Mary in the beginning of the game.
     Text ritual1 = new Text(" Well this is getting depressing. Who thought \n" +
@@ -76,5 +87,34 @@ public class MainWorld extends World
     
     public void prompt1()
     {
+    }
+    
+    public void TextChoices() 
+    throws FileNotFoundException
+    {
+        String questionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Questions.txt";
+        String responsePath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Responses.txt";;
+        String reactionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Reactions.txt";;
+        
+        readPath(questions, questionPath);
+        readPath(responses, responsePath);
+        readPath(reactions, reactionPath);
+    }
+    private void readPath(ArrayList<String> temp, String path) throws FileNotFoundException{
+        InputStream is = new FileInputStream(path);
+ 
+        // Try block to check for exceptions
+        try (Scanner sc = new Scanner(
+                 is, StandardCharsets.UTF_8.name())) {
+ 
+            // It holds true till there is single element
+            // left in the object with usage of hasNext()
+            // method
+            while (sc.hasNextLine()) {
+ 
+                // Printing the content of file
+                temp.add(sc.nextLine());
+            }
+        }
     }
 }

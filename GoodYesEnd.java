@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Ending for if the user decides to date Mary.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Valerie
+ * @version Jan. 9/22
  */
 public class GoodYesEnd extends World
 {

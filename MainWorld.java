@@ -12,7 +12,7 @@ public class MainWorld extends World
     PlayerTextBox playerBox = new PlayerTextBox();
     
     // Player summons Mary.
-    Text ritual1 = new Text(" Well� this is getting depressing. Who thought \n" +
+    Text ritual1 = new Text(" Well this is getting depressing. Who thought \n" +
                             "summoning a spirit was the last resort to curing \n" +
                             "loneliness. Whatever. Let me go turn off the light. ",
                             25);

@@ -1,18 +1,9 @@
 #BlueJ class context
 comment0.target=Highscore
-comment0.text=\r\n\ List\ of\ the\ highscores,\ recursively\ sorted.\r\n\ \r\n\ @author\ Valerie\ \r\n\ @version\ Jan.\ 10/22\r\n
-comment1.params=highscore
-comment1.target=Highscore(java.lang.Integer)
+comment0.text=\r\n\ Displays\ all\ highscores.\r\n\ \r\n\ @author\ Valerie\ \r\n\ @version\ Jan.\ 12/22\r\n
+comment1.params=
+comment1.target=Highscore()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Highscore.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
-comment3.params=a\ lo\ hi
-comment3.target=int\ partition(java.util.ArrayList,\ int,\ int)
-comment4.params=a
-comment4.target=void\ quicksort(java.util.ArrayList)
-comment5.params=a\ lo\ hi
-comment5.target=void\ quicksort(java.util.ArrayList,\ int,\ int)
-comment6.params=a
-comment6.target=void\ shuffle(java.util.ArrayList)
-comment6.text=\r\n\ Shuffle\ an\ array\ using\ the\ Fisher-Yates\ method.\r\n\ The\ Fisher-Yates\ method\ iterates\ the\ array\ once,\ swapping\ each\r\n\ element\ with\ a\ random\ element\ chosen\ in\ the\ range\ between\r\n\ the\ current\ position\ to\ the\ length\ of\ the\ array.\r\n\ @param\ arr\ An\ array\ of\ integers\r\n
-numComments=7
+numComments=3

@@ -27,6 +27,11 @@ public class MainWorld extends World
 
     Text ritual2 = new Text(" Ok, here I go. Bloody Mary, bloody Mary, \n" +
                             "bloody Mary ", 30);
+                            
+                            
+    ArrayList<String> questions = new ArrayList<String>(); //question 0 associated with response 0
+    ArrayList<String> responses = new ArrayList<String>();
+    ArrayList<String> reactions = new ArrayList<String>();
     
     /**
      * Constructor for objects of class MainWorld.
@@ -90,10 +95,6 @@ public class MainWorld extends World
         String questionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Questions.txt";
         String responsePath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Responses.txt";;
         String reactionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Reactions.txt";;
-        
-        ArrayList<String> questions = new ArrayList<String>(); //question 0 associated with response 0
-        ArrayList<String> responses = new ArrayList<String>();
-        ArrayList<String> reactions = new ArrayList<String>();
         
         readPath(questions, questionPath);
         readPath(responses, responsePath);

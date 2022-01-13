@@ -44,9 +44,11 @@ public class MainWorld extends World
     
     public void act()
     {
-        beginRitual();
+        //beginRitual();
         //changeMary();
-        prompt1();
+        //prompt1();
+        //textChoices();
+        System.out.println(questions);
     }
     
     /**
@@ -89,7 +91,7 @@ public class MainWorld extends World
     {
     }
     
-    public void TextChoices() 
+    public void textChoices() 
     throws FileNotFoundException
     {
         String questionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Questions.txt";

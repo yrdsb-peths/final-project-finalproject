@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainWorld extends World
 {
-    Integer romanceScore = 0;
+    Integer romanceScore = 100;
     String name;
     PlayerTextBox playerBox = new PlayerTextBox();
     MaryTextBox maryBox = new MaryTextBox();

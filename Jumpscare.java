@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jumpscare extends World
 {
-
+    GreenfootSound scareSFX = new GreenfootSound("jumpscare.wav");
+    
     /**
      * Constructor for objects of class Jumpscare.
      * 
@@ -17,5 +18,16 @@ public class Jumpscare extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
+    }
+    
+    public void act() 
+    {
+        setBackground("angry mary.png");
+        Greenfoot.delay(150);
+        setBackground("jumpscare.jpg");
+        scareSFX.setVolume(30);
+        scareSFX.play();
+        Greenfoot.delay(200);
+        Greenfoot.setWorld(new StartPage());
     }
 }

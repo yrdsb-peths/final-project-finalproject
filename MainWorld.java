@@ -34,7 +34,7 @@ public class MainWorld extends World
     public void act()
     {
         beginRitual();
-        changeMary();
+        //changeMary();
         prompt1();
     }
     

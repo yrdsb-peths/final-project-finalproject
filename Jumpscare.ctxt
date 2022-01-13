@@ -4,4 +4,6 @@ comment0.text=\r\n\ A\ jumpscare\ if\ a\ user\ fails\ to\ impress\ Mary.\r\n\ \r
 comment1.params=
 comment1.target=Jumpscare()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Jumpscare.\r\n\ \r\n
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3

@@ -19,20 +19,20 @@ public class MainWorld extends World
     String name;
     PlayerTextBox playerBox = new PlayerTextBox();
     MaryTextBox maryBox = new MaryTextBox();
-    
+
     ArrayList<String> questions = new ArrayList<String>(); //question 0 associated with response 0
     ArrayList<String> responses = new ArrayList<String>();
     ArrayList<String> reactions = new ArrayList<String>();
-    
+
     // Text for when player summons Mary in the beginning of the game.
     Text ritual1 = new Text(" Well this is getting depressing. Who thought \n" +
-                            "summoning a spirit was the last resort to curing \n" +
-                            "loneliness. Whatever. Let me go turn off the light. ",
-                            25);
+            "summoning a spirit was the last resort to curing \n" +
+            "loneliness. Whatever. Let me go turn off the light. ",
+            25);
 
     Text ritual2 = new Text(" Ok, here I go. Bloody Mary, bloody Mary, \n" +
-                            "bloody Mary ", 30);
-    
+            "bloody Mary ", 30);
+
     /**
      * Constructor for objects of class MainWorld.
      */
@@ -42,7 +42,7 @@ public class MainWorld extends World
         super(800, 600, 1); 
         textChoices(); 
     }
-    
+
     public void act()
     {
         //beginRitual();
@@ -50,7 +50,7 @@ public class MainWorld extends World
         //prompt1();
         //textChoices();
     }
-    
+
     /**
      * Changes Mary's reaction depending on player's score.
      */
@@ -72,7 +72,7 @@ public class MainWorld extends World
             setBackground("mary.png");
         }
     }
-    
+
     public void beginRitual()
     {
         setBackground("mirror.png");
@@ -86,34 +86,38 @@ public class MainWorld extends World
             //Greenfoot.delay(300);
         }
     }
-    
+
     public void prompt1()
     {
     }
-    
-    private void textChoices() 
-    throws FileNotFoundException
+
+    private void textChoices()
     {
         String questionPath = "Questions.txt";
         String responsePath = "Responses.txt";
         String reactionPath = "Reactions.txt";
-        
-        readPath(questions, questionPath);
-        readPath(responses, responsePath);
-        readPath(reactions, reactionPath);
+
+        try{
+            readPath(questions, questionPath);
+            readPath(responses, responsePath);
+            readPath(reactions, reactionPath);
+        } catch (Exception e) {
+
+        }
     }
+
     private void readPath(ArrayList<String> temp, String path) throws FileNotFoundException{
         InputStream is = new FileInputStream(path);
- 
+
         // Try block to check for exceptions
         try (Scanner sc = new Scanner(
-                 is, StandardCharsets.UTF_8.name())) {
- 
+                is, StandardCharsets.UTF_8.name())) {
+
             // It holds true till there is single element
             // left in the object with usage of hasNext()
             // method
             while (sc.hasNextLine()) {
- 
+
                 // Printing the content of file
                 temp.add(sc.nextLine());
             }

@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Highscore
-comment0.text=\r\n\ Displays\ all\ highscores.\r\n\ \r\n\ @author\ Valerie\ \r\n\ @version\ Jan.\ 12/22\r\n
+comment0.text=\n\ Displays\ all\ highscores.\n\ \n\ @author\ Valerie\ \n\ @version\ Jan.\ 12/22\n
 comment1.params=
 comment1.target=Highscore()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Highscore.\r\n\ \r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Highscore.\n\ \n
 comment2.params=
 comment2.target=void\ act()
 numComments=3

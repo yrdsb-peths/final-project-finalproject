@@ -40,6 +40,7 @@ public class MainWorld extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
+        textChoices(); 
     }
     
     public void act()
@@ -48,7 +49,6 @@ public class MainWorld extends World
         //changeMary();
         //prompt1();
         //textChoices();
-        System.out.println(questions);
     }
     
     /**
@@ -91,7 +91,7 @@ public class MainWorld extends World
     {
     }
     
-    public void textChoices() 
+    private void textChoices() 
     throws FileNotFoundException
     {
         String questionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Questions.txt";

@@ -41,13 +41,16 @@ public class MainWorld extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         textChoices(); 
+        beginRitual();
+        changeMary();
+        prompt1();
     }
 
     public void act()
     {
-        //beginRitual();
-        //changeMary();
-        //prompt1();
+        
+        
+        //
         //textChoices();
     }
 

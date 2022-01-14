@@ -94,9 +94,9 @@ public class MainWorld extends World
     private void textChoices() 
     throws FileNotFoundException
     {
-        String questionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Questions.txt";
-        String responsePath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Responses.txt";;
-        String reactionPath = "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\final-project-finalproject\\TextFiles\\Reactions.txt";;
+        String questionPath = "Questions.txt";
+        String responsePath = "Responses.txt";
+        String reactionPath = "Reactions.txt";
         
         readPath(questions, questionPath);
         readPath(responses, responsePath);

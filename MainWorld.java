@@ -44,14 +44,12 @@ public class MainWorld extends World
         beginRitual();
         changeMary();
         prompt1();
+        System.out.println(questions.toString());
     }
 
     public void act()
     {
         
-        
-        //
-        //textChoices();
     }
 
     /**

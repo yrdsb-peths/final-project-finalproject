@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GoodYesEnd extends World
 {
+    Button cont = new Button(" Press to continue ", 40);
     GreenfootSound musicSFX = new GreenfootSound("happy end.wav");
     String dialogue = "2 years later, Mary and I are still going strong. \n" +
                       "I talk to her through the mirror everyday and \n" +
@@ -29,7 +30,17 @@ public class GoodYesEnd extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
         addObject(endText, 400, 70);
-        addObject(endText2, 400, 500);
+        addObject(endText2, 400, 480);
+        addObject(cont, 650, 570);
+    }
+    
+    public void act()
+    {
         musicSFX.play();
+        if(Greenfoot.mouseClicked(cont))
+        {
+            musicSFX.stop();
+            Greenfoot.setWorld(new Highscore());
+        }
     }
 }

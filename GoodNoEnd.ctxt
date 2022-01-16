@@ -4,4 +4,6 @@ comment0.text=\r\n\ Ending\ for\ if\ the\ player\ decides\ to\ befriend\ Mary.\r
 comment1.params=
 comment1.target=GoodNoEnd()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GoodNoEnd.\r\n\ \r\n
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3

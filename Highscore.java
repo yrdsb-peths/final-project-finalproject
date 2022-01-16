@@ -12,7 +12,7 @@ import java.util.*;
 public class Highscore extends World
 {
     GreenfootSound musicSFX = new GreenfootSound("title.wav");
-    
+    Button cont = new Button(" Press to continue ", 40); 
     /**
      * Constructor for objects of class Highscore.
      * 
@@ -21,6 +21,7 @@ public class Highscore extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
+        addObject(cont, 620, 550);
         //LinkedHashMap<Integer, String> allScores = score3.getSortedScores();
         //System.out.println(allScores);
     }
@@ -28,5 +29,10 @@ public class Highscore extends World
     public void act()
     {
         musicSFX.play();
+        if(Greenfoot.mouseClicked(cont))
+        {
+            musicSFX.stop();
+            Greenfoot.setWorld(new StartPage());
+        }
     }
 }

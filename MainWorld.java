@@ -56,6 +56,9 @@ public class MainWorld extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         textChoices(); 
+        System.out.println(questions.toString());
+        System.out.println(responses.toString());
+        System.out.println(reactions.toString());
     }
 
     public void act()
@@ -64,7 +67,7 @@ public class MainWorld extends World
         //changeMary();
         //prompt1();
         //debug();
-        System.out.println(questions.toString());
+        
     }
     
     public void debug()
@@ -144,11 +147,20 @@ public class MainWorld extends World
 
         try{
             readPath(questions, questionPath);
-            readPath(responses, responsePath);
+        } catch (Exception e) {
+
+        }
+        try{
             readPath(reactions, reactionPath);
         } catch (Exception e) {
 
         }
+        try{
+            readPath(responses, responsePath);
+        } catch (Exception e) {
+
+        }
+        
     }
 
     private void readPath(ArrayList<String> temp, String path) throws FileNotFoundException{

@@ -11,6 +11,8 @@ import java.util.*;
  */
 public class Highscore extends World
 {
+    GreenfootSound musicSFX = new GreenfootSound("title.wav");
+    
     /**
      * Constructor for objects of class Highscore.
      * 
@@ -25,6 +27,6 @@ public class Highscore extends World
     
     public void act()
     {
-
+        musicSFX.play();
     }
 }

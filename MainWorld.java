@@ -32,7 +32,14 @@ public class MainWorld extends World
     Text reaction1;
     Text reaction2;
     Text reaction3;
-
+    
+    // All music and SFX
+    GreenfootSound gainPoints = new GreenfootSound("gain points.wav");
+    GreenfootSound losePoints = new GreenfootSound("lose points.wav");
+    GreenfootSound happy = new GreenfootSound("happy.wav");
+    GreenfootSound neutral = new GreenfootSound("neutral.wav");
+    GreenfootSound upset = new GreenfootSound("upset.wav");
+    
     // Text for when player summons Mary in the beginning of the game.
     Text ritual1 = new Text(" Well this is getting depressing. Who thought summoning \n" +
                             "a spirit was the last resort to curing loneliness. Whatever. \n" +

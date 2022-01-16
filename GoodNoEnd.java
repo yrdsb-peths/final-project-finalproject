@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GoodNoEnd extends World
 {
+    GreenfootSound musicSFX = new GreenfootSound("happy end.wav");
     String dialogue = "Within a span of a year, Mary and I have become \n" +
                       "close friends. Knowing a spirit has its perks. \n\n";
                       
@@ -30,5 +31,6 @@ public class GoodNoEnd extends World
         super(800, 600, 1);
         addObject(endText, 400, 50);
         addObject(endText2, 400, 500);
+        musicSFX.play();
     }
 }

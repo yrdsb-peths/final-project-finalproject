@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Introduction extends World
 {
+    GreenfootSound voiceMemoSFX = new GreenfootSound("voice message.wav");
     String dialogue = "Um, hey. How are you? It's been a while since \n" +
                       "I've seen you out... \n\n" +
                       "Yeah... I know you got dumped. \n" +
@@ -17,8 +18,10 @@ public class Introduction extends World
                       "plenty of fish in the sea. I know one of my friends is \n" +
                       "up for a blind date, or like try something spontaneous! \n\n" +
                       "Call me back when you can, bye.";
+                      
     Text phonecall = new Text(dialogue, 30, 255, 255, 255, 0, 0, 0);
-    Button cont = new Button(" Press to continue ", 40, 70, 70, 70);  
+    Button cont = new Button(" Press to continue ", 40, 70, 70, 70); 
+
     /**
      * Constructor for objects of class Introduction.
      * 
@@ -33,8 +36,10 @@ public class Introduction extends World
  
     public void act()
     {
+        voiceMemoSFX.play();
         if(Greenfoot.mouseClicked(cont))
         {
+            voiceMemoSFX.stop();
             Greenfoot.setWorld(new MainWorld());
         }
     }

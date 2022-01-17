@@ -66,6 +66,7 @@ public class MainWorld extends World
         Greenfoot.delay(200);
         removeObject(ritual2);
         removeObject(playerBox);
+        setUp(counter, counter*3, counter*3+1, counter*3+2);
     }
 
     public void act()
@@ -74,32 +75,47 @@ public class MainWorld extends World
         
         
         
-        changeMary(); // Mary appears in mirror and has different reactions.
+        // Mary appears in mirror and has different reactions.
+        changeMary();
         //Greenfoot.setSpeed(50);
         
         // Prompt 1
         addObject(maryBox, 400, 500);
-        setUp(counter, counter*3, counter*3+1, counter*3+2);
-        Greenfoot.delay(200); // Change
+        
         if(Greenfoot.mouseClicked(response1))
         {
             clear();
             addObject(reaction1, 400, 520);
             counter++; 
+            changeMary();
+            Greenfoot.delay(150);
+            clear();
+            setUp(counter, counter*3, counter*3+1, counter*3+2);
+            
         }
-        else if(Greenfoot.mouseClicked(response2))
+        if(Greenfoot.mouseClicked(response2))
         {
             clear();
             addObject(reaction2, 400, 520);
             romanceScore += 10;
             counter++;
+            changeMary();
+            Greenfoot.delay(150);
+            clear();
+            setUp(counter, counter*3, counter*3+1, counter*3+2);
+            
         }
-        else if (Greenfoot.mouseClicked(response3))
+        if (Greenfoot.mouseClicked(response3))
         {
             clear();
             addObject(reaction3, 400, 520);
             romanceScore -= 10;
             counter++;
+            changeMary();
+            Greenfoot.delay(150);
+            clear();
+            setUp(counter, counter*3, counter*3+1, counter*3+2);
+            
         }
     }
     
@@ -112,6 +128,9 @@ public class MainWorld extends World
         removeObject(response1);
         removeObject(response2);
         removeObject(response3);
+        removeObject(reaction1);
+        removeObject(reaction2);
+        removeObject(reaction3);
     }
     
     /**
@@ -122,13 +141,13 @@ public class MainWorld extends World
      */
     public void setUp(int q, int r1, int r2, int r3)
     {
-        prompt = new Text(" " + questions.get(q).toString() + " ", 30);
-        response1 = new Text(" " + responses.get(r1).toString() + " ", 30);
-        response2 = new Text(" " + responses.get(r2).toString() + " ", 30);
-        response3 = new Text(" " + responses.get(r3).toString() + " ", 30);
-        reaction1 = new Text(" " + reactions.get(r1).toString() + " ", 30);
-        reaction2 = new Text(" " + reactions.get(r2).toString() + " ", 30);
-        reaction3 = new Text(" " + reactions.get(r3).toString() + " ", 30);
+        prompt = new Text(" " + questions.get(q) + " ", 30);
+        response1 = new Text(" " + responses.get(r1) + " ", 30);
+        response2 = new Text(" " + responses.get(r2) + " ", 30);
+        response3 = new Text(" " + responses.get(r3) + " ", 30);
+        reaction1 = new Text(" " + reactions.get(r1) + " ", 30);
+        reaction2 = new Text(" " + reactions.get(r2) + " ", 30);
+        reaction3 = new Text(" " + reactions.get(r3) + " ", 30);
                 
         addObject(prompt, 400, 520);
         addObject(response1, 400, 350);

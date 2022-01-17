@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=Introduction
-comment0.text=\r\n\ Phonecall\ introduction\ to\ give\ context\ to\ main\ character.\r\n\ \r\n\ @author\ Valerie\ Sum\ \r\n\ @version\ Dec.\ 28/21\r\n
+comment0.text=\r\n\ Phonecall\ introduction\ to\ give\ context\ to\ main\ character\ and\ beginning\r\n\ of\ game.\r\n\ \r\n\ @author\ Valerie\ Sum\ \r\n\ @version\ Dec.\ 28/21\r\n
 comment1.params=
 comment1.target=Introduction()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Introduction.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
-numComments=3
+comment3.params=
+comment3.target=void\ beginRitual()
+numComments=4

@@ -58,9 +58,11 @@ public class MainWorld extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         textChoices(); 
+        
         // Pop-up asking for player's name
         name = JOptionPane.showInputDialog("What is your name?");
-        beginRitual();
+        
+        setUp(counter, counter*3, counter*3+1, counter*3+2);
     }
 
     public void act()
@@ -104,21 +106,6 @@ public class MainWorld extends World
             clear();
             setUp(counter, counter*3, counter*3+1, counter*3+2);
         }
-    }
-    
-    public void beginRitual()
-    {
-        setBackground("mirror.png");
-        addObject(playerBox, 400, 500);
-        addObject(ritual1, 400, 520);
-        Greenfoot.delay(300);
-        removeObject(ritual1);
-        addObject(ritual2, 400, 520);
-        setBackground("black background.png");
-        Greenfoot.delay(200);
-        removeObject(ritual2);
-        removeObject(playerBox);
-        setUp(counter, counter*3, counter*3+1, counter*3+2);
     }
         
     /**

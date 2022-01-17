@@ -56,11 +56,6 @@ public class MainWorld extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         textChoices(); 
-    }
-
-    public void act()
-    {
-        // Game beginning.
         setBackground("mirror.png");
         addObject(playerBox, 400, 500);
         addObject(ritual1, 400, 520);
@@ -71,6 +66,13 @@ public class MainWorld extends World
         Greenfoot.delay(200);
         removeObject(ritual2);
         removeObject(playerBox);
+    }
+
+    public void act()
+    {
+        // Game beginning.
+        
+        
         
         changeMary(); // Mary appears in mirror and has different reactions.
         //Greenfoot.setSpeed(50);

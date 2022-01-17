@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  * Main portion of the game.
@@ -48,6 +49,7 @@ public class MainWorld extends World
     Text ritual2 = new Text(" Ok, here I go. Bloody Mary, bloody Mary, \n" +
                             "bloody Mary... ", 30);
     int counter = 0;
+    
     /**
      * Constructor for objects of class MainWorld.
      */
@@ -56,6 +58,56 @@ public class MainWorld extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         textChoices(); 
+        // Pop-up asking for player's name
+        name = JOptionPane.showInputDialog("What is your name?");
+        beginRitual();
+    }
+
+    public void act()
+    {
+        // Mary appears in mirror and has different reactions.
+        changeMary();
+        
+        // Mary's textbox.
+        addObject(maryBox, 400, 500);
+        
+        // 10 prompts
+        if(Greenfoot.mouseClicked(response1))
+        {
+            clear();
+            addObject(reaction1, 400, 520);
+            counter++; 
+            changeMary();
+            Greenfoot.delay(150);
+            clear();
+            setUp(counter, counter*3, counter*3+1, counter*3+2);
+        }
+        else if(Greenfoot.mouseClicked(response2))
+        {
+            clear();
+            addObject(reaction2, 400, 520);
+            romanceScore += 10;
+            counter++;
+            changeMary();
+            Greenfoot.delay(150);
+            clear();
+            setUp(counter, counter*3, counter*3+1, counter*3+2);
+        }
+        else if (Greenfoot.mouseClicked(response3))
+        {
+            clear();
+            addObject(reaction3, 400, 520);
+            romanceScore -= 10;
+            counter++;
+            changeMary();
+            Greenfoot.delay(150);
+            clear();
+            setUp(counter, counter*3, counter*3+1, counter*3+2);
+        }
+    }
+    
+    public void beginRitual()
+    {
         setBackground("mirror.png");
         addObject(playerBox, 400, 500);
         addObject(ritual1, 400, 520);
@@ -68,57 +120,7 @@ public class MainWorld extends World
         removeObject(playerBox);
         setUp(counter, counter*3, counter*3+1, counter*3+2);
     }
-
-    public void act()
-    {
-        // Game beginning.
         
-        
-        
-        // Mary appears in mirror and has different reactions.
-        changeMary();
-        //Greenfoot.setSpeed(50);
-        
-        // Prompt 1
-        addObject(maryBox, 400, 500);
-        
-        if(Greenfoot.mouseClicked(response1))
-        {
-            clear();
-            addObject(reaction1, 400, 520);
-            counter++; 
-            changeMary();
-            Greenfoot.delay(150);
-            clear();
-            setUp(counter, counter*3, counter*3+1, counter*3+2);
-            
-        }
-        if(Greenfoot.mouseClicked(response2))
-        {
-            clear();
-            addObject(reaction2, 400, 520);
-            romanceScore += 10;
-            counter++;
-            changeMary();
-            Greenfoot.delay(150);
-            clear();
-            setUp(counter, counter*3, counter*3+1, counter*3+2);
-            
-        }
-        if (Greenfoot.mouseClicked(response3))
-        {
-            clear();
-            addObject(reaction3, 400, 520);
-            romanceScore -= 10;
-            counter++;
-            changeMary();
-            Greenfoot.delay(150);
-            clear();
-            setUp(counter, counter*3, counter*3+1, counter*3+2);
-            
-        }
-    }
-    
     /**
      * Removes question/prompt and responses from screen.
      */

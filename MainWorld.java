@@ -47,7 +47,7 @@ public class MainWorld extends World
 
     Text ritual2 = new Text(" Ok, here I go. Bloody Mary, bloody Mary, \n" +
                             "bloody Mary... ", 30);
-
+    int counter = 0;
     /**
      * Constructor for objects of class MainWorld.
      */
@@ -71,7 +71,7 @@ public class MainWorld extends World
     public void act()
     {
         // Game beginning.
-        int counter = 0;
+        
         
         
         changeMary(); // Mary appears in mirror and has different reactions.
@@ -85,18 +85,21 @@ public class MainWorld extends World
         {
             clear();
             addObject(reaction1, 400, 520);
+            counter++; 
         }
         else if(Greenfoot.mouseClicked(response2))
         {
             clear();
             addObject(reaction2, 400, 520);
             romanceScore += 10;
+            counter++;
         }
-        else
+        else if (Greenfoot.mouseClicked(response3))
         {
             clear();
             addObject(reaction3, 400, 520);
             romanceScore -= 10;
+            counter++;
         }
     }
     
@@ -164,17 +167,14 @@ public class MainWorld extends World
         try{
             readPath(questions, questionPath);
         } catch (Exception e) {
-
         }
         try{
             readPath(reactions, reactionPath);
         } catch (Exception e) {
-
         }
         try{
             readPath(responses, responsePath);
         } catch (Exception e) {
-
         }
     }
 

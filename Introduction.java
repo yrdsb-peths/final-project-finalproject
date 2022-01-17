@@ -30,13 +30,15 @@ public class Introduction extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
-        addObject(phonecall, 400, 270);
+        addObject(phonecall, 400, 270);    
+        voiceMemoSFX.play();
+        
         addObject(cont, 630, 555);
     }
  
     public void act()
     {
-        voiceMemoSFX.play();
+        
         if(Greenfoot.mouseClicked(cont))
         {
             voiceMemoSFX.stop();

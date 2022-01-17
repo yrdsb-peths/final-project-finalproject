@@ -45,14 +45,23 @@ public class MainWorld extends World
     GreenfootSound upset = new GreenfootSound("upset.wav");
     
     // Text for when player summons Mary in the beginning of the game.
-    Text ritual1 = new Text(" Well this is getting depressing. Who thought summoning \n" +
+    Text ritual1 = new Text("Well this is getting depressing. Who thought summoning \n" +
                             "a spirit was the last resort to curing loneliness. Whatever. \n" +
-                            "Let me go turn off the light. ",25);
+                            "Let me go turn off the light.",25);
 
-    Text ritual2 = new Text(" Ok, here I go. Bloody Mary, bloody Mary, \n" +
-                            "bloody Mary... ", 30);
+    Text ritual2 = new Text("Ok, here I go. Bloody Mary, bloody Mary, \n" +
+                            "bloody Mary...", 30);
     int counter = 0;
     
+    // Ending text.
+    Text badEnd = new Text("Unfortunately, I have to do my job now. Sorry about this, \n" +
+                           " you weren’t a good enough date for me to let you go.       ", 28);
+                           
+    Text neutralEnd = new Text("I’ll get going now. I better not see you again, or else I \n" +
+                               "won't be so kind.", 28);
+                               
+    Text goodEnd = new Text("Um, actually wait!", 30);
+                               
     /**
      * Constructor for objects of class MainWorld.
      */
@@ -82,6 +91,12 @@ public class MainWorld extends World
         
         // Mary's textbox.
         addObject(maryBox, 400, 500);
+        
+        // Ending is decided once all 10 prompts are answered.
+        if(counter >= 10)
+        {
+            ending();
+        }
         
         // 10 prompts
         if(Greenfoot.mouseClicked(response1))
@@ -119,7 +134,33 @@ public class MainWorld extends World
             setUp(counter, counter*3, counter*3+1, counter*3+2);
         }
     }
+    
+    /**
+     * Endings to the game.
+     */
+    public void ending()
+    {
+        clear();
         
+        // Jumpscare for bad end.
+        if(romanceScore < 70)
+        {
+            addObject(badEnd, 400, 520);
+            Greenfoot.delay(300);
+            upset.stop();
+            Greenfoot.setWorld(new Jumpscare());
+        }
+        
+        //Neutral ending.
+        else if (romanceScore >= 70 && romanceScore <= 130)
+        {
+            addObject(neutralEnd, 400, 520);
+            Greenfoot.delay(300);
+            neutral.stop();
+            Greenfoot.setWorld(new Highscore());
+        }
+    }
+                         
     /**
      * Removes question/prompt and responses from screen.
      */

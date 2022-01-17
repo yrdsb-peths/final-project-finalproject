@@ -23,9 +23,9 @@ public class Jumpscare extends World
     public void act() 
     {
         setBackground("angry mary.png");
-        Greenfoot.delay(150);
+        Greenfoot.delay(100);
         setBackground("jumpscare.jpg");
-        scareSFX.setVolume(30);
+        scareSFX.setVolume(40);
         scareSFX.play();
         Greenfoot.delay(200);
         Greenfoot.setWorld(new StartPage());

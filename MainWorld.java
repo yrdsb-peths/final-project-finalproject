@@ -46,7 +46,7 @@ public class MainWorld extends World
                             "Let me go turn off the light. ",25);
 
     Text ritual2 = new Text(" Ok, here I go. Bloody Mary, bloody Mary, \n" +
-                            "bloody Mary ", 30);
+                            "bloody Mary... ", 30);
 
     /**
      * Constructor for objects of class MainWorld.
@@ -60,9 +60,38 @@ public class MainWorld extends World
 
     public void act()
     {
-        beginRitual();
-        //changeMary();
-        //prompt1();
+        // Game beginning.
+        setBackground("mirror.png");
+        addObject(playerBox, 400, 500);
+        addObject(ritual1, 400, 520);
+        Greenfoot.delay(300);
+        removeObject(ritual1);
+        addObject(ritual2, 400, 520);
+        setBackground("black background.png");
+        Greenfoot.delay(200);
+        removeObject(ritual2);
+        removeObject(playerBox);
+        
+        changeMary(); // Mary appears in mirror and has different reactions.
+        //Greenfoot.setSpeed(50);
+        
+        // Prompt 1
+        setUp(0, 0, 1, 2, 0, 1, 2);
+        addObject(maryBox, 400, 500);
+        addObject(prompt, 400, 520);
+        addObject(response1, 400, 350);
+        addObject(response2, 400, 390);
+        addObject(response3, 400, 430);
+        Greenfoot.delay(200); 
+        if(Greenfoot.mouseClicked(response1))
+        {
+            removeObject(prompt);
+            addObject(reaction1, 400, 520);
+            removeObject(response1);
+            removeObject(response2);
+            removeObject(response3);
+        }
+        //Greenfoot.delay(200);
     }
     
     /**
@@ -73,34 +102,13 @@ public class MainWorld extends World
      */
     public void setUp(int q, int res1, int res2, int res3, int react1, int react2, int react3)
     {
-        prompt = new Text(questions.get(q).toString(), 25);
-        response1 = new Text(responses.get(res1).toString(), 25);
-        response2 = new Text(responses.get(res2).toString(), 25);
-        response3 = new Text(responses.get(res3).toString(), 25);
-        reaction1 = new Text(reactions.get(react1).toString(), 25);
-        reaction2 = new Text(reactions.get(react2).toString(), 25);
-        reaction3 = new Text(reactions.get(react3).toString(), 25);
-    }
-    
-    public void beginRitual()
-    {
-        setBackground("mirror.png");
-        addObject(playerBox, 400, 500);
-        addObject(ritual1, 400, 520);
-        Greenfoot.delay(300);
-        removeObject(ritual1);
-        addObject(ritual2, 400, 520);
-        setBackground("black background.png");
-        Greenfoot.delay(200);
-    }
-
-    public void prompt1()
-    {
-        setUp(0, 0, 1, 2, 0, 1, 2);
-        addObject(prompt, 400, 520);
-        addObject(response1, 400, 400);
-        addObject(response2, 400, 420);
-        addObject(response3, 400, 440);
+        prompt = new Text(" " + questions.get(q).toString() + " ", 30);
+        response1 = new Text(" " + responses.get(res1).toString() + " ", 30);
+        response2 = new Text(" " + responses.get(res2).toString() + " ", 30);
+        response3 = new Text(" " + responses.get(res3).toString() + " ", 30);
+        reaction1 = new Text(" " + reactions.get(react1).toString() + " ", 30);
+        reaction2 = new Text(" " + reactions.get(react2).toString() + " ", 30);
+        reaction3 = new Text(" " + reactions.get(react3).toString() + " ", 30);
     }
     
     /**

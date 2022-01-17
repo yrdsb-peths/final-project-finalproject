@@ -71,7 +71,7 @@ public class MainWorld extends World
     public void act()
     {
         // Game beginning.
-        
+        int counter = 0;
         
         
         changeMary(); // Mary appears in mirror and has different reactions.

@@ -26,9 +26,9 @@ public class MainWorld extends World
     
     // For setup of each prompt/question.
     Text prompt;
-    Text response1;
-    Text response2;
-    Text response3;
+    Button response1;
+    Button response2;
+    Button response3;
     Text reaction1;
     Text reaction2;
     Text reaction3;
@@ -60,9 +60,13 @@ public class MainWorld extends World
 
     public void act()
     {
-        //beginRitual();
-        //changeMary();
-        //prompt1();
+        // Game beginning
+        beginRitual();
+        changeMary(); // Mary appears in mirror and has different reactions.
+        //Greenfoot.setSpeed(10);
+        // 10 prompts
+        prompt1();
+        //prompt2();
     }
     
     /**
@@ -71,15 +75,26 @@ public class MainWorld extends World
      * 
      * @param Indexes of associated text.
      */
-    public void setUp(int q, int res1, int res2, int res3, int react1, int react2, int react3)
+    public void setUp(int q, int r1, int r2, int r3)
     {
-        prompt = new Text(questions.get(q).toString(), 25);
-        response1 = new Text(responses.get(res1).toString(), 25);
-        response2 = new Text(responses.get(res2).toString(), 25);
-        response3 = new Text(responses.get(res3).toString(), 25);
-        reaction1 = new Text(reactions.get(react1).toString(), 25);
-        reaction2 = new Text(reactions.get(react2).toString(), 25);
-        reaction3 = new Text(reactions.get(react3).toString(), 25);
+        prompt = new Text(" " + questions.get(q).toString() + " ", 30);
+        response1 = new Button(" " + responses.get(r1).toString() + " ", 30);
+        response2 = new Button(" " + responses.get(r2).toString() + " ", 30);
+        response3 = new Button(" " + responses.get(r3).toString() + " ", 30);
+        reaction1 = new Text(" " + reactions.get(r1).toString() + " ", 30);
+        reaction2 = new Text(" " + reactions.get(r2).toString() + " ", 30);
+        reaction3 = new Text(" " + reactions.get(r3).toString() + " ", 30);
+    }
+    
+    /**
+     * Removes old prompt and response objects.
+     */
+    public void clear()
+    {
+        removeObject(prompt);
+        removeObject(response1);
+        removeObject(response2);
+        removeObject(response3);
     }
     
     public void beginRitual()
@@ -87,22 +102,70 @@ public class MainWorld extends World
         setBackground("mirror.png");
         addObject(playerBox, 400, 500);
         addObject(ritual1, 400, 520);
-        if(Greenfoot.isKeyDown("right"))
-        {
-            removeObject(ritual1);
-            addObject(ritual2, 400, 520);
-            setBackground("black background.png");
-            Greenfoot.delay(200);
-        }
+        Greenfoot.delay(300);
+        removeObject(ritual1);
+        addObject(ritual2, 400, 520);
+        setBackground("black background.png");
+        Greenfoot.delay(200);
+        removeObject(playerBox);
+        removeObject(ritual2);
     }
-
+    
     public void prompt1()
     {
-        setUp(0, 0, 1, 2, 0, 1, 2);
+        setUp(0, 0, 1, 2);
+        addObject(maryBox, 400, 500);
         addObject(prompt, 400, 520);
-        addObject(response1, 400, 400);
-        addObject(response2, 400, 420);
-        addObject(response3, 400, 440);
+        addObject(response1, 400, 350);
+        addObject(response2, 400, 390);
+        addObject(response3, 400, 430);
+        //Greenfoot.delay(200);
+        if(Greenfoot.mouseClicked(response1))
+        {
+            clear();
+            System.out.println("hi");
+            addObject(reaction1, 400, 520);
+        }
+        else if(Greenfoot.mouseClicked(response1))
+        {
+            clear();
+            System.out.println("hi");
+            romanceScore += 10;
+            addObject(reaction2, 400, 520);
+        }
+        else
+        {
+            clear();
+            System.out.println("hi");
+            romanceScore -= 10;
+            addObject(reaction3, 400, 520);
+        }
+    }
+    
+    public void prompt2() 
+    {
+        setUp(1, 3, 4, 5);
+        addObject(maryBox, 400, 500);
+        addObject(prompt, 400, 520);
+        addObject(response1, 400, 350);
+        addObject(response2, 400, 390);
+        addObject(response3, 400, 430);
+        //Greenfoot.delay(200);
+        if(Greenfoot.mouseClicked(response1))
+        {
+            clear();
+            addObject(reaction1, 400, 520);
+        }
+        else if(Greenfoot.mouseClicked(response1))
+        {
+            clear();
+            addObject(reaction2, 400, 520);
+        }
+        else
+        {
+            clear();
+            addObject(reaction3, 400, 520);
+        }
     }
     
     /**

@@ -134,18 +134,18 @@ public class MainWorld extends World
      */
     public void setUp(int q, int r1, int r2, int r3)
     {
-        prompt = new Text(" " + questions.get(q) + " ", 30);
-        response1 = new Text(" " + responses.get(r1) + " ", 30);
-        response2 = new Text(" " + responses.get(r2) + " ", 30);
-        response3 = new Text(" " + responses.get(r3) + " ", 30);
-        reaction1 = new Text(" " + reactions.get(r1) + " ", 30);
-        reaction2 = new Text(" " + reactions.get(r2) + " ", 30);
-        reaction3 = new Text(" " + reactions.get(r3) + " ", 30);
+        prompt = new Text(" " + questions.get(q) + " ", 25);
+        response1 = new Text(" " + responses.get(r1) + " ", 25);
+        response2 = new Text(" " + responses.get(r2) + " ", 25);
+        response3 = new Text(" " + responses.get(r3) + " ", 25);
+        reaction1 = new Text(" " + reactions.get(r1) + " ", 24);
+        reaction2 = new Text(" " + reactions.get(r2) + " ", 24);
+        reaction3 = new Text(" " + reactions.get(r3) + " ", 24);
                 
         addObject(prompt, 400, 520);
-        addObject(response1, 400, 350);
-        addObject(response2, 400, 390);
-        addObject(response3, 400, 430);
+        addObject(response1, 400, 310);
+        addObject(response2, 400, 350);
+        addObject(response3, 400, 390);
     }
     
     /**

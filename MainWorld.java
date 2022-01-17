@@ -69,6 +69,8 @@ public class MainWorld extends World
     {
         // Mary appears in mirror and has different reactions.
         changeMary();
+        // Background music.
+        backgroundMusic();
         
         // Mary's textbox.
         addObject(maryBox, 400, 500);
@@ -89,6 +91,7 @@ public class MainWorld extends World
             clear();
             addObject(reaction2, 400, 520);
             romanceScore += 10;
+            gainPoints.play();
             counter++;
             changeMary();
             Greenfoot.delay(150);
@@ -100,6 +103,7 @@ public class MainWorld extends World
             clear();
             addObject(reaction3, 400, 520);
             romanceScore -= 10;
+            losePoints.play();
             counter++;
             changeMary();
             Greenfoot.delay(150);
@@ -144,6 +148,35 @@ public class MainWorld extends World
         addObject(response3, 400, 430);
     }
     
+    /**
+     * Changes background music depending on Mary's mood.
+     */
+    public void backgroundMusic()
+    {
+        if(romanceScore < 70) 
+        {
+            neutral.stop();
+            upset.play();
+        }
+        else if(romanceScore > 70 && romanceScore < 130) 
+        {
+            if(happy.isPlaying())
+            {
+                happy.stop();
+            }
+            if(upset.isPlaying())
+            {
+                upset.stop();
+            }
+            neutral.play();
+        }
+        else 
+        {
+            neutral.stop();
+            happy.play();
+        }
+    }
+        
     /**
      * Changes Mary's reaction depending on player's score.
      */

@@ -134,13 +134,13 @@ public class MainWorld extends World
      */
     public void setUp(int q, int r1, int r2, int r3)
     {
-        prompt = new Text(" " + questions.get(q) + " ", 25);
+        prompt = new Text(questions.get(q), 25);
         response1 = new Text(" " + responses.get(r1) + " ", 25);
         response2 = new Text(" " + responses.get(r2) + " ", 25);
         response3 = new Text(" " + responses.get(r3) + " ", 25);
-        reaction1 = new Text(" " + reactions.get(r1) + " ", 24);
-        reaction2 = new Text(" " + reactions.get(r2) + " ", 24);
-        reaction3 = new Text(" " + reactions.get(r3) + " ", 24);
+        reaction1 = new Text(reactions.get(r1), 24);
+        reaction2 = new Text(reactions.get(r2), 24);
+        reaction3 = new Text(reactions.get(r3), 24);
                 
         addObject(prompt, 400, 520);
         addObject(response1, 400, 310);
@@ -158,7 +158,12 @@ public class MainWorld extends World
             neutral.stop();
             upset.play();
         }
-        else if(romanceScore > 70 && romanceScore < 130) 
+        else if(romanceScore >130) 
+        {
+            neutral.stop();
+            happy.play();
+        }
+        else 
         {
             if(happy.isPlaying())
             {
@@ -169,11 +174,6 @@ public class MainWorld extends World
                 upset.stop();
             }
             neutral.play();
-        }
-        else 
-        {
-            neutral.stop();
-            happy.play();
         }
     }
         

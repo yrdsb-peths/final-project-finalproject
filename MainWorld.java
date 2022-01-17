@@ -79,7 +79,7 @@ public class MainWorld extends World
         
         // Prompt 1
         addObject(maryBox, 400, 500);
-        setUp(0, 0, 1, 2);
+        setUp(counter, counter*3, counter*3+1, counter*3+2);
         Greenfoot.delay(200); // Change
         if(Greenfoot.mouseClicked(response1))
         {

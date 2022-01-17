@@ -65,7 +65,7 @@ public class MainWorld extends World
         changeMary(); // Mary appears in mirror and has different reactions.
         //Greenfoot.setSpeed(10);
         // 10 prompts
-        prompt1();
+        //prompt1();
         //prompt2();
     }
     

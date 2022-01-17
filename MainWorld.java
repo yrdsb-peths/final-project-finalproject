@@ -60,7 +60,7 @@ public class MainWorld extends World
 
     public void act()
     {
-        //beginRitual();
+        beginRitual();
         //changeMary();
         //prompt1();
     }
@@ -87,13 +87,11 @@ public class MainWorld extends World
         setBackground("mirror.png");
         addObject(playerBox, 400, 500);
         addObject(ritual1, 400, 520);
-        if(Greenfoot.isKeyDown("right"))
-        {
-            removeObject(ritual1);
-            addObject(ritual2, 400, 520);
-            setBackground("black background.png");
-            Greenfoot.delay(200);
-        }
+        Greenfoot.delay(300);
+        removeObject(ritual1);
+        addObject(ritual2, 400, 520);
+        setBackground("black background.png");
+        Greenfoot.delay(200);
     }
 
     public void prompt1()

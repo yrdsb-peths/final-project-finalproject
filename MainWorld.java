@@ -76,22 +76,37 @@ public class MainWorld extends World
         //Greenfoot.setSpeed(50);
         
         // Prompt 1
-        setUp(0, 0, 1, 2, 0, 1, 2);
         addObject(maryBox, 400, 500);
-        addObject(prompt, 400, 520);
-        addObject(response1, 400, 350);
-        addObject(response2, 400, 390);
-        addObject(response3, 400, 430);
-        Greenfoot.delay(200); 
+        setUp(0, 0, 1, 2);
+        Greenfoot.delay(200); // Change
         if(Greenfoot.mouseClicked(response1))
         {
-            removeObject(prompt);
+            clear();
             addObject(reaction1, 400, 520);
-            removeObject(response1);
-            removeObject(response2);
-            removeObject(response3);
         }
-        //Greenfoot.delay(200);
+        else if(Greenfoot.mouseClicked(response2))
+        {
+            clear();
+            addObject(reaction2, 400, 520);
+            romanceScore += 10;
+        }
+        else
+        {
+            clear();
+            addObject(reaction3, 400, 520);
+            romanceScore -= 10;
+        }
+    }
+    
+    /**
+     * Removes question/prompt and responses from screen.
+     */
+    public void clear()
+    {
+        removeObject(prompt);
+        removeObject(response1);
+        removeObject(response2);
+        removeObject(response3);
     }
     
     /**
@@ -100,15 +115,20 @@ public class MainWorld extends World
      * 
      * @param Indexes of associated text.
      */
-    public void setUp(int q, int res1, int res2, int res3, int react1, int react2, int react3)
+    public void setUp(int q, int r1, int r2, int r3)
     {
         prompt = new Text(" " + questions.get(q).toString() + " ", 30);
-        response1 = new Text(" " + responses.get(res1).toString() + " ", 30);
-        response2 = new Text(" " + responses.get(res2).toString() + " ", 30);
-        response3 = new Text(" " + responses.get(res3).toString() + " ", 30);
-        reaction1 = new Text(" " + reactions.get(react1).toString() + " ", 30);
-        reaction2 = new Text(" " + reactions.get(react2).toString() + " ", 30);
-        reaction3 = new Text(" " + reactions.get(react3).toString() + " ", 30);
+        response1 = new Text(" " + responses.get(r1).toString() + " ", 30);
+        response2 = new Text(" " + responses.get(r2).toString() + " ", 30);
+        response3 = new Text(" " + responses.get(r3).toString() + " ", 30);
+        reaction1 = new Text(" " + reactions.get(r1).toString() + " ", 30);
+        reaction2 = new Text(" " + reactions.get(r2).toString() + " ", 30);
+        reaction3 = new Text(" " + reactions.get(r3).toString() + " ", 30);
+                
+        addObject(prompt, 400, 520);
+        addObject(response1, 400, 350);
+        addObject(response2, 400, 390);
+        addObject(response3, 400, 430);
     }
     
     /**

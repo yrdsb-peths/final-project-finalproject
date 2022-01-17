@@ -27,12 +27,15 @@ public class MainWorld extends World
     
     // For setup of each prompt/question.
     Text prompt;
-    Text response1;
-    Text response2;
-    Text response3;
+    Button response1;
+    Button response2;
+    Button response3;
     Text reaction1;
     Text reaction2;
     Text reaction3;
+    
+    // Highscore to be displayed.
+    Text score;
     
     // All music and SFX
     GreenfootSound gainPoints = new GreenfootSound("gain points.wav");
@@ -69,8 +72,13 @@ public class MainWorld extends World
     {
         // Mary appears in mirror and has different reactions.
         changeMary();
+        
         // Background music.
         backgroundMusic();
+        
+        // Displaying score.
+        score = new Text(" Highscore: " + romanceScore + " ", 30, 80, 80, 80);
+        addObject(score, 115, 40);
         
         // Mary's textbox.
         addObject(maryBox, 400, 500);
@@ -124,6 +132,7 @@ public class MainWorld extends World
         removeObject(reaction1);
         removeObject(reaction2);
         removeObject(reaction3);
+        removeObject(score);
     }
     
     /**
@@ -135,9 +144,9 @@ public class MainWorld extends World
     public void setUp(int q, int r1, int r2, int r3)
     {
         prompt = new Text(questions.get(q), 25);
-        response1 = new Text(" " + responses.get(r1) + " ", 25);
-        response2 = new Text(" " + responses.get(r2) + " ", 25);
-        response3 = new Text(" " + responses.get(r3) + " ", 25);
+        response1 = new Button(" " + responses.get(r1) + " ", 25);
+        response2 = new Button(" " + responses.get(r2) + " ", 25);
+        response3 = new Button(" " + responses.get(r3) + " ", 25);
         reaction1 = new Text(reactions.get(r1), 24);
         reaction2 = new Text(reactions.get(r2), 24);
         reaction3 = new Text(reactions.get(r3), 24);

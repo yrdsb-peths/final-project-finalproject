@@ -20,7 +20,7 @@ public class Introduction extends World
                       "up for a blind date, or like try something spontaneous! \n\n" +
                       "Call me back when you can, bye.";
                       
-    Text phonecall = new Text(dialogue, 30, 255, 255, 255, 0, 0, 0);
+    Text phonecall = new Text(dialogue, 30, 0, 0, 0);
     Button cont = new Button(" Press to continue ", 40, 70, 70, 70); 
     
     // Text for when player summons Mary in the beginning of the game.

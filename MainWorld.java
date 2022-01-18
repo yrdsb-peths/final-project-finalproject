@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-// import javax.swing.JOptionPane;
 
 /**
  * Main portion of the game.
@@ -72,9 +71,6 @@ public class MainWorld extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         textChoices(); 
-        
-        // Pop-up asking for player's name
-        // name = JOptionPane.showInputDialog("What is your name?");
         
         setUp(counter, counter*3, counter*3+1, counter*3+2);
     }
@@ -160,14 +156,14 @@ public class MainWorld extends World
             addObject(date, 400, 350);
             addObject(befriend, 400, 390);
             
-            if(Greenfoot.mouseClicked(date))
+            if(Greenfoot.mouseClicked(date)) // Date Mary.
             {
                 removeObject(date);
                 removeObject(befriend);
                 happy.stop();
                 Greenfoot.setWorld(new GoodYesEnd(romanceScore));
             }
-            else if(Greenfoot.mouseClicked(befriend))
+            else if(Greenfoot.mouseClicked(befriend)) // Befriend Mary.
             {
                 removeObject(date);
                 removeObject(befriend);

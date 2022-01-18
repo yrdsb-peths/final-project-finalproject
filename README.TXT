@@ -11,15 +11,13 @@ David, Valerie and Catherine
 Codes used: 
 
 - ArrayList
-  - located in Highscore classs/
+  - located in Scoreboard class
       - stores list of scores taken from player
+  - located in Mainworld 
+      - stores a list of given questions, responses and reactions 
       
 - Quicksort Recusive 
-  - located in Highscore class
+  - located in Scorebord class
       - sorts an ArrayList from the user and returns the highest score 
     
-- Linked Hashmap
-  - located in ScoreBorad class 
-    - takes in the number of highscore and sorts into an arrayList 
-    - link to a hashmap 
 additional information:

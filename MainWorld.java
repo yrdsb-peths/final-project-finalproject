@@ -61,8 +61,8 @@ public class MainWorld extends World
                                "won't be so kind.", 28);
                                
     Text goodEnd = new Text("Um, actually wait! Do you think we could...", 28);
-    Button date = new Button("Date Mary <3", 25);
-    Button befriend = new Button("Befriend Mary :)", 25);
+    Button date = new Button(" Date Mary <3 ", 25);
+    Button befriend = new Button(" Befriend Mary :) ", 25);
                                
     /**
      * Constructor for objects of class MainWorld.

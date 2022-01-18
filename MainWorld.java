@@ -109,6 +109,7 @@ public class MainWorld extends World
         }
         else if(Greenfoot.mouseClicked(response2))
         {
+            setBackground("happy mary.png");
             clear();
             addObject(reaction2, 400, 520);
             romanceScore += 10;
@@ -121,6 +122,7 @@ public class MainWorld extends World
         }
         else if (Greenfoot.mouseClicked(response3))
         {
+            setBackground("upset mary.png");
             clear();
             addObject(reaction3, 400, 520);
             romanceScore -= 10;

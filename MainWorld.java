@@ -61,6 +61,8 @@ public class MainWorld extends World
                                "won't be so kind.", 28);
                                
     Text goodEnd = new Text("Um, actually wait!", 30);
+    Button date = new Button("Date Mary <3", 25);
+    Button befriend = new Button("Befriend Mary <3", 25);
                                
     /**
      * Constructor for objects of class MainWorld.
@@ -148,9 +150,31 @@ public class MainWorld extends World
             addObject(badEnd, 400, 520);
             Greenfoot.delay(300);
             upset.stop();
-            Greenfoot.setWorld(new Jumpscare());
+            Greenfoot.setWorld(new Jumpscare(romanceScore, name));
         }
-        
+        // Good ending, option to befriend or date Mary.
+        else if(romanceScore > 130)
+        {
+            addObject(goodEnd, 400, 520);
+            Greenfoot.delay(150);
+            addObject(date, 400, 350);
+            addObject(befriend, 400, 390);
+            
+            if(Greenfoot.mouseClicked(date))
+            {
+                removeObject(date);
+                removeObject(befriend);
+                happy.stop();
+                Greenfoot.setWorld(new GoodYesEnd());
+            }
+            else if(Greenfoot.mouseClicked(befriend))
+            {
+                removeObject(date);
+                removeObject(befriend);
+                happy.stop();
+                Greenfoot.setWorld(new GoodNoEnd());
+            }
+        }
         //Neutral ending.
         else if (romanceScore >= 70 && romanceScore <= 130)
         {

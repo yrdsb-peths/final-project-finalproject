@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  * Main portion of the game.
@@ -62,7 +63,10 @@ public class MainWorld extends World
     Text goodEnd = new Text("Um, actually wait! Do you think we could...", 28);
     Button date = new Button(" Date Mary <3 ", 25);
     Button befriend = new Button(" Befriend Mary :) ", 25);
-                               
+    
+    // Y coordinates for responses.
+    ArrayList<Integer> yValues = new ArrayList<Integer>();
+         
     /**
      * Constructor for objects of class MainWorld.
      */
@@ -215,11 +219,32 @@ public class MainWorld extends World
         reaction3 = new Text(reactions.get(r3), 24);
                 
         addObject(prompt, 400, 520);
-        addObject(response1, 400, 310);
-        addObject(response2, 400, 350);
-        addObject(response3, 400, 390);
+        
+        // Adding y-coordinates.
+        yValues.add(310);
+        yValues.add(350);
+        yValues.add(390);
+        
+        addObject(response1, 400, randomY());
+        addObject(response2, 400, randomY());
+        addObject(response3, 400, randomY());
     }
     
+    /**
+     * Randomizes y-coordinates of the 3 responses to change their order
+     * displayed on the screen.
+     * 
+     * @return Either 310, 350, or 390 as the y-coordinate.
+     */
+    public int randomY()
+    {
+        Random rand = new Random();
+        int elem = rand.nextInt(yValues.size());
+        int y = yValues.get(elem);
+        yValues.remove(elem);
+        return y;
+    }
+ 
     /**
      * Changes background music depending on Mary's mood.
      */

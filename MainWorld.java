@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
+// import javax.swing.JOptionPane;
 
 /**
  * Main portion of the game.
@@ -60,9 +60,9 @@ public class MainWorld extends World
     Text neutralEnd = new Text("I’ll get going now. I better not see you again, or else I \n" +
                                "won't be so kind.", 28);
                                
-    Text goodEnd = new Text("Um, actually wait!", 30);
+    Text goodEnd = new Text("Um, actually wait! Do you think we could...", 28);
     Button date = new Button("Date Mary <3", 25);
-    Button befriend = new Button("Befriend Mary <3", 25);
+    Button befriend = new Button("Befriend Mary :)", 25);
                                
     /**
      * Constructor for objects of class MainWorld.
@@ -74,7 +74,7 @@ public class MainWorld extends World
         textChoices(); 
         
         // Pop-up asking for player's name
-        name = JOptionPane.showInputDialog("What is your name?");
+        // name = JOptionPane.showInputDialog("What is your name?");
         
         setUp(counter, counter*3, counter*3+1, counter*3+2);
     }
@@ -150,7 +150,7 @@ public class MainWorld extends World
             addObject(badEnd, 400, 520);
             Greenfoot.delay(300);
             upset.stop();
-            Greenfoot.setWorld(new Jumpscare(romanceScore, name));
+            Greenfoot.setWorld(new Jumpscare(romanceScore));
         }
         // Good ending, option to befriend or date Mary.
         else if(romanceScore > 130)
@@ -165,14 +165,14 @@ public class MainWorld extends World
                 removeObject(date);
                 removeObject(befriend);
                 happy.stop();
-                Greenfoot.setWorld(new GoodYesEnd());
+                Greenfoot.setWorld(new GoodYesEnd(romanceScore));
             }
             else if(Greenfoot.mouseClicked(befriend))
             {
                 removeObject(date);
                 removeObject(befriend);
                 happy.stop();
-                Greenfoot.setWorld(new GoodNoEnd());
+                Greenfoot.setWorld(new GoodNoEnd(romanceScore));
             }
         }
         //Neutral ending.
@@ -181,7 +181,7 @@ public class MainWorld extends World
             addObject(neutralEnd, 400, 520);
             Greenfoot.delay(300);
             neutral.stop();
-            Greenfoot.setWorld(new Highscore(romanceScore, name));
+            Greenfoot.setWorld(new Highscore(romanceScore));
         }
     }
                          

@@ -14,28 +14,30 @@ public class Highscore extends World
     GreenfootSound musicSFX = new GreenfootSound("title.wav");
     Button cont = new Button(" Press to continue ", 40); 
     ScoreBoard board;
-    LinkedHashMap<Integer, String> highscores;
-    int y = 100;
+    ArrayList<Integer> highscores;
+    int y = 180;
     
     /**
      * Constructor for objects of class Highscore.
      * 
      */
-    public Highscore(Integer score, String name)
+    public Highscore(Integer score)
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
         addObject(cont, 620, 550);
         
-        // Getting linked arraylist of sorted scores.
-        board = new ScoreBoard(score, name);
-        highscores = board.getSortedScores();
+        // Getting arraylist of sorted scores.
+        board = new ScoreBoard(score);
+        highscores = board.getHighscores();
         
         // Displaying highscores and names.
-        Text boardScores = new Text(highscores.keySet().toString(), 30, 0);
-        Text boardNames = new Text(highscores.values().toString(), 30, 0);
-        addObject(boardScores, 600, 200);
-        addObject(boardNames, 160, 200);
+        for(int i = highscores.size() - 1; i >= 0; i--)
+        {
+            Text theScore = new Text(highscores.get(i).toString(), 50, 0);
+            addObject(theScore, 400, y);
+            y += 50;
+        }
     }
     
     public void act()

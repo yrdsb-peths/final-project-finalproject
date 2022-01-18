@@ -21,15 +21,17 @@ public class GoodNoEnd extends World
     
     Text endText = new Text(dialogue, 30, 50);
     Text endText2 = new Text(dialogue2, 30, 80);
+    Integer score;
     
     /**
      * Constructor for objects of class GoodNoEnd.
      * 
      */
-    public GoodNoEnd()
+    public GoodNoEnd(Integer score)
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
+        this.score = score;
         addObject(endText, 400, 50);
         addObject(endText2, 400, 470);
         addObject(cont, 650, 570);
@@ -41,7 +43,7 @@ public class GoodNoEnd extends World
         if(Greenfoot.mouseClicked(cont))
         {
             musicSFX.stop();
-            // Greenfoot.setWorld(new Highscore());
+            Greenfoot.setWorld(new Highscore(score));
         }
     }
 }

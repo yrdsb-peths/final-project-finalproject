@@ -11,48 +11,21 @@ import java.util.*;
  */
 public class ScoreBoard  
 {
-    private String name;
-    private Integer highscore;
     private static ArrayList<Integer> highscores = new ArrayList<Integer>();
-    private static HashMap<Integer, String> unsortedScores = new HashMap<Integer, String>();
-    private static LinkedHashMap<Integer, String> sortedScores = new LinkedHashMap<Integer, String>();
     
     /**
      * Constructor for objects of class ScoreBoard
      */
-    public ScoreBoard(Integer highscore, String name)
+    public ScoreBoard(Integer highscore)
     {
-        this.highscore = highscore;
-        this.name = name;
         highscores.add(highscore);
-        unsortedScores.put(highscore, name);
+        quicksort(highscores);
     }
     
-    // Returns sorted highscores with associated names.
-    public LinkedHashMap<Integer, String> getSortedScores()
+    // Returns sorted highscores.
+    public ArrayList<Integer> getHighscores()
     {
-        sortAndCopy();
-        return sortedScores;
-    }
-    
-    /**
-     * Sorts highscores and copies highscore and associated name onto
-     * linked hashmap.
-     */
-    public void sortAndCopy()
-    {
-        // Sorting highscores.
-        quicksort(highscores); 
-        
-        for(int i = highscores.size()-1; i > -1; i--) 
-        {
-            // Highest score on arraylist.
-            Integer highest = highscores.get(i); 
-            // Associated name to highest score on hashmap.
-            String name = unsortedScores.get(highest);
-            // Putting highscore and name onto linked hashmap.
-            sortedScores.put(highest, name); 
-        }
+        return highscores;
     }
     
     // Modified quicksort code from Mr. Chan.

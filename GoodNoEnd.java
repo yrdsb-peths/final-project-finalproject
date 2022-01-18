@@ -41,7 +41,7 @@ public class GoodNoEnd extends World
         if(Greenfoot.mouseClicked(cont))
         {
             musicSFX.stop();
-            Greenfoot.setWorld(new Highscore());
+            // Greenfoot.setWorld(new Highscore());
         }
     }
 }

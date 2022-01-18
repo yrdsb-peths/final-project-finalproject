@@ -93,7 +93,7 @@ public class MainWorld extends World
         addObject(maryBox, 400, 500);
         
         // Ending is decided once all 10 prompts are answered.
-        if(counter >= 10)
+        if(counter >= 9)
         {
             ending();
         }
@@ -157,7 +157,7 @@ public class MainWorld extends World
             addObject(neutralEnd, 400, 520);
             Greenfoot.delay(300);
             neutral.stop();
-            Greenfoot.setWorld(new Highscore());
+            Greenfoot.setWorld(new Highscore(romanceScore, name));
         }
     }
                          

@@ -64,11 +64,11 @@ public class Introduction extends World
         setBackground("mirror.png");
         addObject(playerBox, 400, 500);
         addObject(ritual1, 400, 520);
-        Greenfoot.delay(300);
+        Greenfoot.delay(1500);
         removeObject(ritual1);
         addObject(ritual2, 400, 520);
         setBackground("black background.png");
-        Greenfoot.delay(200);
+        Greenfoot.delay(1000);
         removeObject(ritual2);
         removeObject(playerBox);
     }

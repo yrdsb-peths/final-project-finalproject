@@ -25,7 +25,7 @@ public class MainWorld extends World
     ArrayList<String> questions = new ArrayList<String>(); //question 0 associated with response 0
     ArrayList<String> responses = new ArrayList<String>();
     ArrayList<String> reactions = new ArrayList<String>();
-    
+
     // For setup of each prompt/question.
     Text prompt;
     Button response1;
@@ -34,40 +34,40 @@ public class MainWorld extends World
     Text reaction1;
     Text reaction2;
     Text reaction3;
-    
+
     // Highscore to be displayed.
     Text score;
-    
+
     // All music and SFX
     GreenfootSound gainPoints = new GreenfootSound("gain points.wav");
     GreenfootSound losePoints = new GreenfootSound("lose points.wav");
     GreenfootSound happy = new GreenfootSound("happy.wav");
     GreenfootSound neutral = new GreenfootSound("neutral.wav");
     GreenfootSound upset = new GreenfootSound("upset.wav");
-    
+
     // Text for when player summons Mary in the beginning of the game.
     Text ritual1 = new Text("Well this is getting depressing. Who thought summoning \n" +
-                            "a spirit was the last resort to curing loneliness. Whatever. \n" +
-                            "Let me go turn off the light.",25);
+            "a spirit was the last resort to curing loneliness. Whatever. \n" +
+            "Let me go turn off the light.",25);
 
     Text ritual2 = new Text("Ok, here I go. Bloody Mary, bloody Mary, \n" +
-                            "bloody Mary...", 30);
+            "bloody Mary...", 30);
     int counter = 0;
-    
+
     // Ending text.
     Text badEnd = new Text("Unfortunately, I have to do my job now. Sorry about this, \n" +
-                           " you weren’t a good enough date for me to let you go.       ", 28);
-                           
+            " you weren’t a good enough date for me to let you go.       ", 28);
+
     Text neutralEnd = new Text("I’ll get going now. I better not see you again, or else I \n" +
-                               "won't be so kind.", 28);
-                               
+            "won't be so kind.", 28);
+
     Text goodEnd = new Text("Um, actually wait! Do you think we could...", 28);
     Button date = new Button(" Date Mary <3 ", 25);
     Button befriend = new Button(" Befriend Mary :) ", 25);
-    
+
     // Y coordinates for responses.
     ArrayList<Integer> yValues = new ArrayList<Integer>();
-         
+
     /**
      * Constructor for objects of class MainWorld.
      */
@@ -84,31 +84,31 @@ public class MainWorld extends World
     {
         // Mary appears in mirror and has different reactions.
         changeMary();
-        
+
         // Background music.
         backgroundMusic();
-        
+
         // Displaying score.
         score = new Text(" Highscore: " + romanceScore + " ", 30, 80, 80, 80);
         addObject(score, 115, 40);
-        
+
         // Mary's textbox.
-        
-        
+
         // Ending is decided once all 10 prompts are answered.
         if(counter >= 9)
         {
             ending();
         }
-        
+
         // 10 prompts
         if(Greenfoot.mouseClicked(response1))
         {
             clear();
             addObject(reaction1, 400, 520);
             counter++; 
-            changeMary();
+
             Greenfoot.delay(150);
+            changeMary();
             clear();
             setUp(counter, counter*3, counter*3+1, counter*3+2);
         }
@@ -119,10 +119,11 @@ public class MainWorld extends World
             clear();
             addObject(reaction2, 400, 520);
             romanceScore += 10;
-            
+
             counter++;
-            changeMary();
+
             Greenfoot.delay(150);
+            changeMary();
             clear();
             setUp(counter, counter*3, counter*3+1, counter*3+2);
         }
@@ -133,22 +134,23 @@ public class MainWorld extends World
             clear();
             addObject(reaction3, 400, 520);
             romanceScore -= 10;
-            
+
             counter++;
-            changeMary();
+
             Greenfoot.delay(150);
+            changeMary();
             clear();
             setUp(counter, counter*3, counter*3+1, counter*3+2);
         }
     }
-    
+
     /**
      * Endings to the game.
      */
     public void ending()
     {
         clear();
-        
+
         // Jumpscare for bad end.
         if(romanceScore < 70)
         {
@@ -164,7 +166,7 @@ public class MainWorld extends World
             Greenfoot.delay(150);
             addObject(date, 400, 350);
             addObject(befriend, 400, 390);
-            
+
             if(Greenfoot.mouseClicked(date)) // Date Mary.
             {
                 removeObject(date);
@@ -189,7 +191,7 @@ public class MainWorld extends World
             Greenfoot.setWorld(new Highscore(romanceScore));
         }
     }
-                         
+
     /**
      * Removes question/prompt and responses from screen.
      */
@@ -204,7 +206,7 @@ public class MainWorld extends World
         removeObject(reaction3);
         removeObject(score);
     }
-    
+
     /**
      * Setting up the question/prompt, reactions, and responses
      * to be displayed in the game.
@@ -220,19 +222,19 @@ public class MainWorld extends World
         reaction1 = new Text(reactions.get(r1), 24);
         reaction2 = new Text(reactions.get(r2), 24);
         reaction3 = new Text(reactions.get(r3), 24);
-                
+
         addObject(prompt, 400, 520);
-        
+
         // Adding y-coordinates.
         yValues.add(310);
         yValues.add(350);
         yValues.add(390);
-        
+
         addObject(response1, 400, randomY());
         addObject(response2, 400, randomY());
         addObject(response3, 400, randomY());
     }
-    
+
     /**
      * Randomizes y-coordinates of the 3 responses to change their order
      * displayed on the screen.
@@ -247,7 +249,7 @@ public class MainWorld extends World
         yValues.remove(elem);
         return y;
     }
- 
+
     /**
      * Changes background music depending on Mary's mood.
      */
@@ -276,7 +278,7 @@ public class MainWorld extends World
             neutral.play();
         }
     }
-        
+
     /**
      * Changes Mary's reaction depending on player's score.
      */
@@ -298,7 +300,7 @@ public class MainWorld extends World
             setBackground("mary.png");
         }
     }
-    
+
     private void textChoices()
     {
         String questionPath = "Questions.txt";

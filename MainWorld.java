@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 import java.io.*;
@@ -75,7 +76,7 @@ public class MainWorld extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         textChoices(); 
-        
+        addObject(maryBox, 400, 500);
         setUp(counter, counter*3, counter*3+1, counter*3+2);
     }
 
@@ -92,10 +93,10 @@ public class MainWorld extends World
         addObject(score, 115, 40);
         
         // Mary's textbox.
-        addObject(maryBox, 400, 500);
+        
         
         // Ending is decided once all 10 prompts are answered.
-        if(counter >= 9)
+        if(counter > 9)
         {
             ending();
         }
@@ -113,11 +114,12 @@ public class MainWorld extends World
         }
         else if(Greenfoot.mouseClicked(response2))
         {
+            gainPoints.play();
             setBackground("happy mary.png");
             clear();
             addObject(reaction2, 400, 520);
             romanceScore += 10;
-            gainPoints.play();
+            
             counter++;
             changeMary();
             Greenfoot.delay(150);
@@ -126,11 +128,12 @@ public class MainWorld extends World
         }
         else if (Greenfoot.mouseClicked(response3))
         {
+            losePoints.play();
             setBackground("upset mary.png");
             clear();
             addObject(reaction3, 400, 520);
             romanceScore -= 10;
-            losePoints.play();
+            
             counter++;
             changeMary();
             Greenfoot.delay(150);

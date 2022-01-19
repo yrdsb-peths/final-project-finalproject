@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=GoodYesEnd
-comment0.text=\r\n\ Ending\ for\ if\ the\ user\ decides\ to\ date\ Mary.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=GoodYesEnd()
+comment0.text=\r\n\ Ending\ for\ if\ the\ user\ decides\ to\ date\ Mary.\r\n\ \r\n\ @author\ Valerie\r\n\ @version\ Jan.\ 9/22\r\n
+comment1.params=score
+comment1.target=GoodYesEnd(java.lang.Integer)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GoodYesEnd.\r\n\ \r\n
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3

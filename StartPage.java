@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartPage extends World
 {
+    GreenfootSound titleSFX = new GreenfootSound("title.wav");
     Button start = new Button(" Press to start ", 50, 70, 70, 70); 
     
     /**
@@ -23,8 +24,10 @@ public class StartPage extends World
     
     public void act()
     {
+        titleSFX.play();
         if(Greenfoot.mouseClicked(start))
         {
+            titleSFX.stop();
             Greenfoot.setWorld(new Introduction());
         }
     }

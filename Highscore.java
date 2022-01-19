@@ -4,93 +4,49 @@ import java.util.Random;
 import java.util.*;
 
 /**
- * List of the highscores, recursively sorted.
+ * Displays all highscores.
  * 
  * @author Valerie 
- * @version Jan. 10/22
+ * @version Jan. 12/22
  */
 public class Highscore extends World
 {
-    ArrayList<Integer> highscores = new ArrayList<Integer>();
+    GreenfootSound musicSFX = new GreenfootSound("title.wav");
+    Button cont = new Button(" Press to continue ", 40); 
+    ScoreBoard board;
+    ArrayList<Integer> highscores;
+    int y = 180;
     
     /**
      * Constructor for objects of class Highscore.
      * 
      */
-    public Highscore(Integer highscore)
+    public Highscore(Integer score)
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
-        highscores.add(highscore);
+        addObject(cont, 620, 550);
+        
+        // Getting arraylist of sorted scores.
+        board = new ScoreBoard(score);
+        highscores = board.getHighscores();
+        
+        // Displaying highscores and names.
+        for(int i = highscores.size() - 1; i >= 0; i--)
+        {
+            Text theScore = new Text(highscores.get(i).toString(), 50, 0);
+            addObject(theScore, 400, y);
+            y += 50;
+        }
     }
     
     public void act()
     {
-        quicksort(highscores);
-        //System.out.println(highscores);
-    }
-    
-    // Modified quicksort code from Mr. Chan.
-    public static int partition(ArrayList<Integer> a, int lo, int hi) 
-    {
-        int i = lo; 
-        int j = hi + 1;
-        while (true) 
+        musicSFX.play();
+        if(Greenfoot.mouseClicked(cont))
         {
-            while (a.get(++i) < a.get(lo)) // Find item on left to swap
-            {    
-                if (i == hi) 
-                {
-                    break; 
-                }
-            }
-            while (a.get(--j) > a.get(lo)) 
-            {
-                if (j == lo)
-                {
-                    break;
-                }
-            }
-            if (i >= j)
-            {
-                break;  // Check if pointers cross 
-            }
-            Collections.swap(a, i, j); // Swap
-        } 
-        
-        Collections.swap(a, lo, j); // Swap partitioning element
-        return j;  // Return index of item now know to be in place
-    }
-    
-    public static void quicksort(ArrayList<Integer> a) 
-    {
-        shuffle(a); 
-        quicksort(a, 0, a.size() - 1); 
-    }
-
-    // Quicksort the subarray from a[lo] to a[hi]  
-    private static void quicksort(ArrayList<Integer> a, int lo, int hi) 
-    {
-        if (hi <= lo) return;
-        int j = partition(a, lo, hi); 
-        quicksort(a, lo, j-1); 
-        quicksort(a, j+1, hi); 
-    }
-
-    /**
-     * Shuffle an array using the Fisher-Yates method.
-     * The Fisher-Yates method iterates the array once, swapping each
-     * element with a random element chosen in the range between
-     * the current position to the length of the array.
-     * @param arr An array of integers
-     */
-    public static void shuffle(ArrayList<Integer> a)
-    {
-        Random rand = new Random();
-        for(int i = 0; i<a.size(); i++)
-        {
-            int num = rand.nextInt(a.size());
-            Collections.swap(a, i, num);
+            musicSFX.stop();
+            Greenfoot.setWorld(new StartPage());
         }
     }
 }

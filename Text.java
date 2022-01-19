@@ -14,17 +14,23 @@ public class Text extends Actor
      * 
      * @param content The sentences that are wanted to be displayed.
     */
-    public Text(String content, int size, int r, int g, int b, int br, int bg, int bb) 
+    public Text(String content, int size, int r, int g, int b) 
     {
-        Color textColor = new Color(r, g, b);
-        Color background = new Color(br, bg, bb);
-        setImage(new GreenfootImage(content, size, textColor, background));
+        Color background = new Color(r, g, b);
+        setImage(new GreenfootImage(content, size, Color.WHITE, background));
     }
     
     //Creates white text with pink background
     public Text(String content, int size) 
     {
         Color background = new Color(229, 115, 115);
+        setImage(new GreenfootImage(content, size, Color.WHITE, background));
+    }  
+    
+    //Creates white text with different background transparency.
+    public Text(String content, int size, int a) 
+    {
+        Color background = new Color(229, 115, 115, a);
         setImage(new GreenfootImage(content, size, Color.WHITE, background));
     }  
 }

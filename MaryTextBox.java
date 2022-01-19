@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MaryTextBox here.
+ * Mary's textbox that is displayed in-game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Valerie
+ * @version Jan. 5/22 
  */
 public class MaryTextBox extends Actor
 {

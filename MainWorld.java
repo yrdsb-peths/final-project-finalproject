@@ -75,8 +75,12 @@ public class MainWorld extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
+        
         textChoices(); 
+        
+        // Mary's textbox.
         addObject(maryBox, 400, 500);
+        
         setUp(counter, counter*3, counter*3+1, counter*3+2);
     }
 
@@ -91,11 +95,6 @@ public class MainWorld extends World
         // Displaying score.
         score = new Text(" Highscore: " + romanceScore + " ", 30, 80, 80, 80);
         addObject(score, 115, 40);
-
-        // Mary's textbox.
-
-        // Ending is decided once all 10 prompts are answered.
-        
 
         // 10 prompts
         if(Greenfoot.mouseClicked(response1))
@@ -139,6 +138,7 @@ public class MainWorld extends World
             clear();
             setUp(counter, counter*3, counter*3+1, counter*3+2);
         }
+        // Ending is decided once all 10 prompts are answered.
         if(counter >= 9)
         {
             ending();

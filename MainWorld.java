@@ -95,10 +95,7 @@ public class MainWorld extends World
         // Mary's textbox.
 
         // Ending is decided once all 10 prompts are answered.
-        if(counter >= 9)
-        {
-            ending();
-        }
+        
 
         // 10 prompts
         if(Greenfoot.mouseClicked(response1))
@@ -141,6 +138,10 @@ public class MainWorld extends World
             changeMary();
             clear();
             setUp(counter, counter*3, counter*3+1, counter*3+2);
+        }
+        if(counter >= 9)
+        {
+            ending();
         }
     }
 

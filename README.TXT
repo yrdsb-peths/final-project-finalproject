@@ -18,4 +18,3 @@ Code used:
   - Quicksort Recursive 
   - Located in Scorebord class
       - Sorts an ArrayList from the user and returns the highest score 
-

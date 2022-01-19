@@ -8,16 +8,14 @@ Mary Me
 
 David, Valerie and Catherine
 
-Codes used: 
+Code used: 
 
-- ArrayList
-  - located in Scoreboard class
-      - stores list of scores taken from player
-  - located in Mainworld 
-      - stores a list of given questions, responses and reactions 
+- Data Structures:
+  - ArrayList in Scoreboard class
+  - ArrayList to store text in MainWorld class
       
-- Quicksort Recusive 
-  - located in Scorebord class
-      - sorts an ArrayList from the user and returns the highest score 
-    
-additional information:
+- Sorting and recursive algorithm
+  - Quicksort Recursive 
+  - Located in Scorebord class
+      - Sorts an ArrayList from the user and returns the highest score 
+

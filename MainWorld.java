@@ -1,4 +1,3 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 import java.io.*;
@@ -301,7 +300,7 @@ public class MainWorld extends World
             setBackground("mary.png");
         }
     }
-
+    
     private void textChoices()
     {
         String questionPath = "Questions.txt";

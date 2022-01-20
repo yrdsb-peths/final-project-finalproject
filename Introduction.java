@@ -59,6 +59,7 @@ public class Introduction extends World
         }
     }
     
+    // Begininning of game where player summons Mary.
     public void beginRitual()
     {
         setBackground("mirror.png");

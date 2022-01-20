@@ -91,10 +91,6 @@ public class MainWorld extends World
         // Displaying score.
         score = new Text(" Highscore: " + romanceScore + " ", 30, 80, 80, 80);
         addObject(score, 115, 40);
-
-        // Mary's textbox.
-
-        // Ending is decided once all 10 prompts are answered.
         
 
         // 10 prompts
@@ -103,7 +99,6 @@ public class MainWorld extends World
             clear();
             addObject(reaction1, 400, 520);
             counter++; 
-
             Greenfoot.delay(150);
             changeMary();
             clear();
@@ -116,9 +111,7 @@ public class MainWorld extends World
             clear();
             addObject(reaction2, 400, 520);
             romanceScore += 10;
-
             counter++;
-
             Greenfoot.delay(150);
             changeMary();
             clear();
@@ -301,13 +294,16 @@ public class MainWorld extends World
             setBackground("mary.png");
         }
     }
-
+    /**
+     * Helper method that contains file path to read and store to ArrayList
+     */
     private void textChoices()
     {
+        //File paths
         String questionPath = "Questions.txt";
         String responsePath = "Responses.txt";
         String reactionPath = "Reactions.txt";
-
+        //Using the reader method to fill ArrayLists
         try{
             readPath(questions, questionPath);
         } catch (Exception e) {
@@ -321,7 +317,12 @@ public class MainWorld extends World
         } catch (Exception e) {
         }
     }
-
+    /**
+     * Reader method that read the files
+     * 
+     * @param Arraylist to be filled
+     * @param Path of file to be read
+     */
     private void readPath(ArrayList<String> temp, String path) throws FileNotFoundException{
         InputStream is = new FileInputStream(path);
 

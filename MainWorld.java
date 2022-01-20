@@ -101,7 +101,6 @@ public class MainWorld extends World
             clear();
             addObject(reaction1, 400, 520);
             counter++; 
-
             Greenfoot.delay(150);
             changeMary();
             clear();
@@ -114,9 +113,7 @@ public class MainWorld extends World
             clear();
             addObject(reaction2, 400, 520);
             romanceScore += 10;
-
             counter++;
-
             Greenfoot.delay(150);
             changeMary();
             clear();
@@ -300,13 +297,17 @@ public class MainWorld extends World
             setBackground("mary.png");
         }
     }
-    
+
+    /**
+     * Helper method that contains file path to read and store to ArrayList
+     */
     private void textChoices()
     {
+        //File paths
         String questionPath = "Questions.txt";
         String responsePath = "Responses.txt";
         String reactionPath = "Reactions.txt";
-
+        //Using the reader method to fill ArrayLists
         try{
             readPath(questions, questionPath);
         } catch (Exception e) {
@@ -320,7 +321,12 @@ public class MainWorld extends World
         } catch (Exception e) {
         }
     }
-
+    /**
+     * Reader method that read the files
+     * 
+     * @param Arraylist to be filled
+     * @param Path of file to be read
+     */
     private void readPath(ArrayList<String> temp, String path) throws FileNotFoundException{
         InputStream is = new FileInputStream(path);
 

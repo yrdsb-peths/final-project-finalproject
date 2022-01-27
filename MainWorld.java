@@ -104,6 +104,7 @@ public class MainWorld extends World
             Greenfoot.delay(150);
             changeMary();
             clear();
+
             setUp(counter, counter*3, counter*3+1, counter*3+2);
         }
         else if(Greenfoot.mouseClicked(response2))
@@ -226,7 +227,7 @@ public class MainWorld extends World
         yValues.add(310);
         yValues.add(350);
         yValues.add(390);
-
+        Greenfoot.delay(50);
         addObject(response1, 400, randomY());
         addObject(response2, 400, randomY());
         addObject(response3, 400, randomY());

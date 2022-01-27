@@ -138,6 +138,7 @@ public class MainWorld extends World
         // Ending is decided once all 10 prompts are answered.
         if(counter >= 9)
         {
+            Greenfoot.delay(50);
             ending();
         }
     }
